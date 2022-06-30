@@ -6,7 +6,7 @@ import EarthCloudsMap from '../../assets/textures/8k_earth_clouds.jpg';
 
 import { useLoader } from '@react-three/fiber';
 import { TextureLoader } from 'three';
-import { OrbitControls } from '@react-three/drei';
+import { OrbitControls, Stars } from '@react-three/drei';
 import * as THREE from 'three';
 
 function Earth(props) {
@@ -18,6 +18,14 @@ function Earth(props) {
   return (
     <>
       <ambientLight intensity={1} />
+      <Stars
+        radius={300}
+        depth={60}
+        count={20000}
+        factor={7}
+        saturation={0}
+        fade={true}
+      />
       <mesh>
         <sphereGeometry args={[1.005, 32, 32]} />
         <meshPhongMaterial
